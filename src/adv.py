@@ -3,7 +3,7 @@ from player import Player
 import textwrap as tw
 
 """
-Simple text adventure game, use N, S, E, W, or Q to play the game
+Simple text adventure game, use N, S, E, W, or Q to play the game, can set name by changing the name in quotes on line 47
 """
 
 # Declare all the rooms
@@ -57,10 +57,11 @@ current_room = (input("[N] North [S] South [E] East [W] West [Q]\n"))
 # * Waits for user input and decides what to do.
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
+
 # Print an error message if the movement isn't allowed.
 print(f"Please enter a valid direction")
 #
 # If the user enters "q", quit the game.
 
 def move_room(player_input):
-    
+    pass
