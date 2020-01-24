@@ -10,7 +10,7 @@ Simple text adventure game, use N, S, E, W, or Q to play the game, can set name 
 
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons"),
+                    "North of you, the cave mount beckons"),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
 passages run north and east."""),
@@ -45,7 +45,7 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 my_player = Player("Jesse", room['outside'])
-current_room = (input("[N] North [S] South [E] East [W] West [Q]\n"))
+current_room = (switch_room("[N] North [S] South [E] East [W] West [Q]\n"))
 
 
 
@@ -63,5 +63,30 @@ print(f"Please enter a valid direction")
 #
 # If the user enters "q", quit the game.
 
-def move_room(player_input):
-    pass
+
+def switch_room(player_input):
+    if player_input == 'n':
+        if player.current_room.n_to is None:
+            print('\n\n Please enter a valid direction\nYou are currently in')
+        else:
+            player.current_room = player.current_room.n_to
+        elif player_input == 's':
+                    if player.current_room.s_to is None:
+            print('\n\n Please enter a valid direction\nYou are currently in')
+        else:
+            player.current_room = player.current_room.s_to
+        elif player_input == 'e':
+                    if player.current_room.e_to is None:
+            print('\n\n Please enter a valid direction\nYou are currently in')
+        else:
+            player.current_room = player.current_room.s_to
+        elif player_input == 'w':
+                    if player.current_room.w_to is None:
+            print('\n\n Please enter a valid direction\nYou are currently in')
+        else:
+            player.current_room = player.current_room.s_to
+            
+
+player_input = None
+while player_input != 'q':
+    print ('\n\n' + player.current_room.name + '\n\n' + textwrap.fill(player.current_room.description, 87))
