@@ -2,6 +2,10 @@ from room import Room
 from player import Player
 import textwrap as tw
 
+"""
+Simple text adventure game, use N, S, E, W, or Q to play the game
+"""
+
 # Declare all the rooms
 
 room = {
@@ -40,17 +44,17 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-my_player = Player(room['outside'])
+my_player = Player("Jesse", room['outside'])
+current_room = (input"[N] North [S] South [E] East [W] West [Q]\n")
 
 
-while True:
-    
-    print(Player.current_room.name)
+
 # Write a loop that:
 #
 # * Prints the current room name
+print(current_room)
 # * Prints the current description (the textwrap module might be useful here).
-current_room = Room()
+
 # * Waits for user input and decides what to do.
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
