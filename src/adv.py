@@ -61,3 +61,6 @@ current_room = (input("[N] North [S] South [E] East [W] West [Q]\n"))
 print(f"Please enter a valid direction")
 #
 # If the user enters "q", quit the game.
+
+def move_room(player_input):
+    
