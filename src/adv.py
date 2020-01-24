@@ -1,4 +1,6 @@
 from room import Room
+from player import Player
+import textwrap as tw
 
 # Declare all the rooms
 
